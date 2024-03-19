@@ -6,17 +6,13 @@
 // Brief Description : This script controls the main menu and allows the player to press the quit, start, 
                        and other menu buttons.
 *****************************************************************************/
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuControls : MonoBehaviour
 {
-    [SerializeField] GameObject _ControlsPanel;
-    [SerializeField] GameObject _CreditsPanel;
-    //[SerializeField] GameObject _closeControlsButton;
-    //[SerializeField] GameObject _closeCreditsButton;
+    [SerializeField] GameObject _controlsPanel;
+    [SerializeField] GameObject _creditsPanel;
     [SerializeField] GameObject _startButton;
     [SerializeField] GameObject _controlsButton;
     [SerializeField] GameObject _creditsButton;
@@ -52,7 +48,7 @@ public class MenuControls : MonoBehaviour
     /// </summary>
     public void OpenControls()
     {
-        _ControlsPanel.SetActive(true);
+        _controlsPanel.SetActive(true);
         //_closeControlsButton.SetActive(true);
         _startButton.SetActive(false);
         _controlsButton.SetActive(false);
@@ -65,7 +61,7 @@ public class MenuControls : MonoBehaviour
     /// </summary>
     public void CloseControls()
     {
-        _ControlsPanel.SetActive(false);
+        _controlsPanel.SetActive(false);
         //_closeControlsButton.SetActive(false);
         _startButton.SetActive(true);
         _controlsButton.SetActive(true);
@@ -78,7 +74,7 @@ public class MenuControls : MonoBehaviour
     /// </summary>
     public void OpenCredits()
     {
-        _CreditsPanel.SetActive(true);
+        _creditsPanel.SetActive(true);
         //_closeCreditsButton.SetActive(true);
         _startButton.SetActive(false);
         _controlsButton.SetActive(false);
@@ -91,7 +87,7 @@ public class MenuControls : MonoBehaviour
     /// </summary>
     public void CloseCredits()
     {
-        _CreditsPanel.SetActive(false);
+        _creditsPanel.SetActive(false);
         //_closeCreditsButton.SetActive(false);
         _startButton.SetActive(true);
         _controlsButton.SetActive(true);
