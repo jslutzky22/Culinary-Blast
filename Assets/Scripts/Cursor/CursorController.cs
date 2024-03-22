@@ -7,6 +7,7 @@
                         It also changes the visuals and size of the cursor.
 *****************************************************************************/
 using UnityEngine;
+using TMPro;
 
 public class CursorController : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class CursorController : MonoBehaviour
     [SerializeField] private Texture2D cursorClicked;
     [SerializeField] private CursorControls controls;
     private Camera mainCamera;
+    [SerializeField] private TMP_Text _pointsText;
+    [SerializeField] private int pointsTotal = 0;
+
 
 
     /// <summary>
@@ -36,6 +40,7 @@ public class CursorController : MonoBehaviour
     {
         controls.Mouse.Click.started += _ => StartedClick();
         controls.Mouse.Click.performed += _ => EndedClick();
+        _pointsText.text = "Points: " + pointsTotal.ToString();
     }
 
     /// <summary>
@@ -73,12 +78,15 @@ public class CursorController : MonoBehaviour
                 if (click != null)
                 {
                     click.onClickAction();
+
+                    if (hit.collider.tag == "Trash")
+                    {
+                        Debug.Log("Trash shot");
+                        pointsTotal += 100;
+                        _pointsText.text = "Points: " + pointsTotal.ToString();
+                    }
                 }
-                /*if(hit.collider.tag == "Fruit")
-                {
-                    hit.collider.gameObject.GetComponent<Fruit>().onClickFruit();
-                }
-                Debug.Log("3D Hit: " + hit.collider.tag);*/
+                //Debug.Log("3D Hit: " + hit.collider.tag);*/
             }
         }
     }

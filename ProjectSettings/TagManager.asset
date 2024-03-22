@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Customer
+  - Fruit
+  - Trash
   layers:
   - Default
   - TransparentFX
