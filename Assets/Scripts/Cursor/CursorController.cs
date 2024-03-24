@@ -15,8 +15,9 @@ public class CursorController : MonoBehaviour
     [SerializeField] private Texture2D cursorClicked;
     [SerializeField] private CursorControls controls;
     private Camera mainCamera;
-    [SerializeField] private TMP_Text _pointsText;
-    [SerializeField] private int pointsTotal = 0;
+    //[SerializeField] private TMP_Text _pointsText;
+    private PointCollector pointCollector;
+    //[SerializeField] private int pointsTotal = 0;
 
 
 
@@ -38,9 +39,10 @@ public class CursorController : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        pointCollector = FindObjectOfType<PointCollector>();
         controls.Mouse.Click.started += _ => StartedClick();
         controls.Mouse.Click.performed += _ => EndedClick();
-        _pointsText.text = "Points: " + pointsTotal.ToString();
+        //_pointsText.text = "Points: " + pointsTotal.ToString();
     }
 
     /// <summary>
@@ -81,9 +83,11 @@ public class CursorController : MonoBehaviour
 
                     if (hit.collider.tag == "Trash")
                     {
-                        Debug.Log("Trash shot");
-                        pointsTotal += 100;
-                        _pointsText.text = "Points: " + pointsTotal.ToString();
+                        pointCollector.PointsTotal += 100;
+
+                        //Debug.Log("Trash shot");
+                        //pointsTotal += 100;
+                        //_pointsText.text = "Points: " + pointsTotal.ToString();
                     }
                 }
                 //Debug.Log("3D Hit: " + hit.collider.tag);*/

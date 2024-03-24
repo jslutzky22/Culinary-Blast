@@ -7,7 +7,7 @@ public class Fruit : MonoBehaviour, IClick
 {
     public void onClickAction()
     {
-        Debug.Log("Fruit clicking~");
+        //Debug.Log("Fruit clicking~");
 
         Destroy(gameObject);
     }
