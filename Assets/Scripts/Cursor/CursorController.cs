@@ -7,17 +7,19 @@
                         It also changes the visuals and size of the cursor.
 *****************************************************************************/
 using UnityEngine;
-using TMPro;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class CursorController : MonoBehaviour
 {
     [SerializeField] private Texture2D cursor;
     [SerializeField] private Texture2D cursorClicked;
+    [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private CursorControls controls;
     private Camera mainCamera;
-    //[SerializeField] private TMP_Text _pointsText;
     private PointCollector pointCollector;
-    //[SerializeField] private int pointsTotal = 0;
+    private InputAction quit;
+    private InputAction restart;
 
 
 
@@ -39,10 +41,45 @@ public class CursorController : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        _playerInput.currentActionMap.Enable();
+        quit = _playerInput.currentActionMap.FindAction("Quit");
+        quit.started += quitStarted;
+        restart = _playerInput.currentActionMap.FindAction("Restart");
+        restart.started += restartStarted;
         pointCollector = FindObjectOfType<PointCollector>();
         controls.Mouse.Click.started += _ => StartedClick();
         controls.Mouse.Click.performed += _ => EndedClick();
         //_pointsText.text = "Points: " + pointsTotal.ToString();
+    }
+
+    /// <summary>
+    /// On restartStarted, reload the current scene
+    /// </summary>
+    /// <param name="context"></param>
+    private void restartStarted(InputAction.CallbackContext context)
+    {
+        SceneManager.GetActiveScene();
+    }
+
+    /// <summary>
+    /// on quitStarted, quit application
+    /// </summary>
+    /// <param name="context"></param>
+    private void quitStarted(InputAction.CallbackContext context)
+    {
+        Debug.Log("quit");
+        Application.Quit();
+    }
+
+    /// <summary>
+    /// On destroy/reload of scene,delete the controls
+    /// </summary>
+    private void OnDestroy()
+    {
+        controls.Mouse.Click.started -= _ => StartedClick();
+        controls.Mouse.Click.performed -= _ => EndedClick();
+        restart.started -= restartStarted;
+        quit.started -= quitStarted;
     }
 
     /// <summary>
@@ -66,6 +103,7 @@ public class CursorController : MonoBehaviour
     /// Detects when an object is being pressed on using raycasts
     /// Can also make it go a certain distance and shoot through things as well
     /// Also ensures an object is being clicked prior to doing the onClickAction
+    /// Also makes it so that if the object clicked was trash, add 100 points
     /// </summary>
     private void DetectObject()
     {
@@ -84,13 +122,8 @@ public class CursorController : MonoBehaviour
                     if (hit.collider.tag == "Trash")
                     {
                         pointCollector.PointsTotal += 100;
-
-                        //Debug.Log("Trash shot");
-                        //pointsTotal += 100;
-                        //_pointsText.text = "Points: " + pointsTotal.ToString();
                     }
                 }
-                //Debug.Log("3D Hit: " + hit.collider.tag);*/
             }
         }
     }
@@ -119,8 +152,6 @@ public class CursorController : MonoBehaviour
     private void ChangeCursor(Texture2D cursorType)
     {
         Vector2 hotspot = new Vector2(cursorType.width / 2, cursorType.height / 2);
-        //Debug.Log(hotspot);
         Cursor.SetCursor(cursorType, hotspot, CursorMode.ForceSoftware);
-       //Debug.Log(cursorType.ToString());
     }
 }

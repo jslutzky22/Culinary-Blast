@@ -30,12 +30,18 @@ public class VanishObject : MonoBehaviour
         }
     }
 
-    // Method to start the vanishing process
+    /// <summary>
+    /// The method to start the fanishing process
+    /// </summary>
     public void StartVanishing()
     {
         isVanishing = true;
         timer = 0.0f;
     }
+
+    /// <summary>
+    /// Vanish object instantly
+    /// </summary>
     public void VanishNow()
     {
         _willVanish.SetActive(false);

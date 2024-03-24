@@ -94,4 +94,21 @@ public class MenuControls : MonoBehaviour
         _creditsButton.SetActive(true);
         _quitButton.SetActive(true);
     }
+
+    public void levelOne()
+    {
+        SceneManager.LoadScene("Level01");
+    }
+    public void levelTwo()
+    {
+        SceneManager.LoadScene("Level02");
+    }
+    public void levelThree()
+    {
+        SceneManager.LoadScene("Level03");
+    }
+    public void levelFour()
+    {
+        SceneManager.LoadScene("Level04");
+    }
 }

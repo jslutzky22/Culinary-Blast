@@ -73,12 +73,20 @@ PrefabInstance:
       value: AlienPumpkin Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 153f8867094eda541aea904953d3eaca, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 153f8867094eda541aea904953d3eaca, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 153f8867094eda541aea904953d3eaca, type: 3}
       propertyPath: m_TagString
       value: Fruit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 153f8867094eda541aea904953d3eaca, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -129,7 +137,7 @@ Rigidbody:
   m_GameObject: {fileID: 4696552473231425879}
   serializedVersion: 4
   m_Mass: 0.2
-  m_Drag: 0
+  m_Drag: 0.2
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
