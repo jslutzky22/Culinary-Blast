@@ -60,6 +60,7 @@ public class PointCollector : MonoBehaviour
     /// </summary>
     private void Update()
     {
+        _pointsText.text = "Points: " + pointsTotal.ToString();
         if (smoothieProgress >= 5) 
         {
             pointsTotal += 300;

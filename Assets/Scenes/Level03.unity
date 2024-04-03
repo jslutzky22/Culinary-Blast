@@ -4481,7 +4481,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1409148756}
         m_TargetAssemblyTypeName: LevelController, Assembly-CSharp
-        m_MethodName: Nextlevel
+        m_MethodName: NextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

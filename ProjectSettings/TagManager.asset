@@ -7,6 +7,8 @@ TagManager:
   - Customer
   - Fruit
   - Trash
+  - Tutorial
+  - Blender
   layers:
   - Default
   - TransparentFX
