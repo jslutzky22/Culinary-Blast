@@ -18,6 +18,7 @@ public class LoadNextScene : MonoBehaviour
     [SerializeField] private float loadSceneAfter;
     private bool sceneLoadStarted = false;
     [SerializeField] private bool loadMenu;
+    [SerializeField] GameObject imageToAppear;
 
    /// <summary>
    /// Every frame check if the scene load has been started, then depending on if loadMenu is true or not.
@@ -55,6 +56,14 @@ public class LoadNextScene : MonoBehaviour
     {
         yield return new WaitForSeconds(loadSceneAfter);
         SceneManager.LoadScene("Menu");
+    }
+
+    /// <summary>
+    /// This void allows me to pop up my logo on the splash screen as called in an animation event
+    /// </summary>
+    public void showImage()
+    {
+        imageToAppear.SetActive(true);
     }
 
 

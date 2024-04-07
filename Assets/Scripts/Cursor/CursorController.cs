@@ -6,6 +6,7 @@
 // Brief Description : This script allows the cursor to interact with objects via destroying and moving them via click.
                         It also changes the visuals and size of the cursor.
 *****************************************************************************/
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -16,11 +17,14 @@ public class CursorController : MonoBehaviour
     [SerializeField] private Texture2D cursorClicked;
     [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private CursorControls controls;
+    [SerializeField] private float xTurnOff;
     private Camera mainCamera;
     private PointCollector pointCollector;
     private InputAction quit;
     private InputAction restart;
-
+    [SerializeField] private AudioClip incorrectSound;
+    [SerializeField] private AudioSource MyAudioSource;
+    [SerializeField] private GameObject bigX;
 
 
     /// <summary>
@@ -123,6 +127,10 @@ public class CursorController : MonoBehaviour
                     {
                         pointCollector.PointsTotal += 100;
                     }
+                    if (hit.collider.tag == "Fruit")
+                    {
+                        StartCoroutine(misfire());
+                    }
                 }
             }
         }
@@ -153,5 +161,12 @@ public class CursorController : MonoBehaviour
     {
         Vector2 hotspot = new Vector2(cursorType.width / 2, cursorType.height / 2);
         Cursor.SetCursor(cursorType, hotspot, CursorMode.ForceSoftware);
+    }
+    private IEnumerator misfire()
+    {
+        bigX.SetActive(true);
+        MyAudioSource.PlayOneShot(incorrectSound, 1.0f);
+        yield return new WaitForSeconds(xTurnOff);
+        bigX.SetActive(false);
     }
 }
