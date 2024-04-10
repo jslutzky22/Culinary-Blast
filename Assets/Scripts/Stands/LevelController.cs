@@ -5,6 +5,7 @@
 //
 // Brief Description : This scripts controls the level time, time it takes to win, and all UI that occurs on the end.
 *****************************************************************************/
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,22 +16,29 @@ public class LevelController : MonoBehaviour
     /// The variables
     /// </summary>
     [SerializeField] private GameObject stand1;
-    [SerializeField] private GameObject stand2;
-    [SerializeField] private GameObject stand3;
-    [SerializeField] private GameObject stand4;
     [SerializeField] private GameObject winHud;
     [SerializeField] private float remainingTime;
     [SerializeField] private GameObject originalPointsText;
     [SerializeField] private TMP_Text _finalPointsText;
     [SerializeField] private TMP_Text _TimerText;
     [SerializeField] private int finalPoints;
+    [SerializeField] private int star1Points;
+    [SerializeField] private int star2Points;
+    [SerializeField] private int star3Points;
     private PointCollector pointCollector;
-    [SerializeField] private bool level1;
-    [SerializeField] private bool level2;
-    [SerializeField] private bool level3;
-    [SerializeField] private bool level4;
+    [SerializeField] private GameObject emptyStar1;
+    [SerializeField] private GameObject emptyStar2;
+    [SerializeField] private GameObject emptyStar3;
+    [SerializeField] private GameObject fullStar1;
+    [SerializeField] private GameObject fullStar2;
+    [SerializeField] private GameObject fullStar3;
+    //[SerializeField] private bool level1;
+    //[SerializeField] private bool level2;
+    //[SerializeField] private bool level3;
+    //[SerializeField] private bool level4;
     [SerializeField] private GameObject pauseMenu;
     private bool levelCompleted = false;
+    private bool starsCouroutineShot;
 
     /// <summary>
     /// On start, find the pointCollector object and ensure the winHud is off
@@ -65,34 +73,16 @@ public class LevelController : MonoBehaviour
         {
             pauseMenu.SetActive(false);
             originalPointsText.SetActive(false);
-          if (level1 == true)
-            {
-                stand1.SetActive(false);
-            }
-          if (level2 == true)
-            {
-                stand1.SetActive(false);
-                stand2.SetActive(false);
-            }
-          if (level3 == true)
-            {
-                stand1.SetActive(false);
-                stand2.SetActive(false);
-                stand3.SetActive(false);
-            }
-          if (level4 == true)
-            {
-                stand1.SetActive(false);
-                stand2.SetActive(false);
-                stand3.SetActive(false);
-                stand4.SetActive(false);
-            }
-           
+            stand1.SetActive(false);
             winHud.SetActive(true);
 
             
-            _finalPointsText.text = "Final Points: " + pointCollector.PointsTotal.ToString();
-           
+            _finalPointsText.text = "Paycheck: $" + pointCollector.PointsTotal.ToString();
+            if (starsCouroutineShot == false)
+            {
+                StartCoroutine(starCourotine());
+                starsCouroutineShot = true;
+            }
 
             
             levelCompleted = true;
@@ -130,5 +120,22 @@ public class LevelController : MonoBehaviour
     public void ClosePause()
     {
         pauseMenu.SetActive(false);
+    }
+    private IEnumerator starCourotine()
+    {
+      emptyStar1.SetActive(true);
+      emptyStar2.SetActive(true);
+      emptyStar3.SetActive(true);
+      if (pointCollector.PointsTotal >= star1Points)
+      {
+        fullStar1.SetActive(true);
+      }
+      if (pointCollector.PointsTotal >= star2Points)
+      {
+         fullStar2.SetActive(true);
+      }
+        yield return new WaitForSeconds(1f);
+        
+        yield return new WaitForSeconds(1f);
     }
 }
