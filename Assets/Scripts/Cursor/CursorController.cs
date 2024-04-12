@@ -13,6 +13,8 @@ using UnityEngine.SceneManagement;
 
 public class CursorController : MonoBehaviour
 {
+    [SerializeField] private AudioClip laser;
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private Texture2D cursor;
     [SerializeField] private Texture2D cursorClicked;
     [SerializeField] private PlayerInput _playerInput;
@@ -92,6 +94,7 @@ public class CursorController : MonoBehaviour
     private void StartedClick()
     {
         ChangeCursor(cursorClicked);
+        audioSource.PlayOneShot(laser);
     }
 
     /// <summary>
@@ -111,7 +114,6 @@ public class CursorController : MonoBehaviour
     /// </summary>
     private void DetectObject()
     {
-       
         Ray ray = mainCamera.ScreenPointToRay(controls.Mouse.Position.ReadValue<Vector2>());
         RaycastHit hit;
         if(Physics.Raycast(ray, out hit)) 
@@ -122,9 +124,9 @@ public class CursorController : MonoBehaviour
                 if (click != null)
                 {
                     click.onClickAction();
-
                     if (hit.collider.tag == "Trash")
                     {
+                        
                         pointCollector.PointsTotal += 100;
                     }
                     if (hit.collider.tag == "Fruit")

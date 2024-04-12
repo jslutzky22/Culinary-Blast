@@ -2677,6 +2677,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6f7d63f63117144aadeb342ad3adf8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laser: {fileID: 8300000, guid: 07db1f128ed2e7a44a44e31ddb8555a8, type: 3}
+  audioSource: {fileID: 1143400951}
   cursor: {fileID: 2800000, guid: a5b2ce5820097b744b994d6559f8f7e0, type: 3}
   cursorClicked: {fileID: 2800000, guid: c9fdcb3e3088d6e41b6af54250486e36, type: 3}
   _playerInput: {fileID: 1143400948}

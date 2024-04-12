@@ -11,8 +11,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuControls : MonoBehaviour
 {
-    [SerializeField] GameObject _controlsPanel;
-    [SerializeField] GameObject _creditsPanel;
+    //[SerializeField] GameObject _controlsPanel;
+    //[SerializeField] GameObject _creditsPanel;
     [SerializeField] GameObject _startButton;
     [SerializeField] GameObject _controlsButton;
     [SerializeField] GameObject _creditsButton;
@@ -48,7 +48,7 @@ public class MenuControls : MonoBehaviour
     /// </summary>
     public void OpenControls()
     {
-        _controlsPanel.SetActive(true);
+        //_controlsPanel.SetActive(true);
         //_closeControlsButton.SetActive(true);
         _startButton.SetActive(false);
         _controlsButton.SetActive(false);
@@ -61,7 +61,7 @@ public class MenuControls : MonoBehaviour
     /// </summary>
     public void CloseControls()
     {
-        _controlsPanel.SetActive(false);
+        //_controlsPanel.SetActive(false);
         //_closeControlsButton.SetActive(false);
         _startButton.SetActive(true);
         _controlsButton.SetActive(true);
@@ -74,7 +74,7 @@ public class MenuControls : MonoBehaviour
     /// </summary>
     public void OpenCredits()
     {
-        _creditsPanel.SetActive(true);
+        //_creditsPanel.SetActive(true);
         //_closeCreditsButton.SetActive(true);
         _startButton.SetActive(false);
         _controlsButton.SetActive(false);
@@ -87,7 +87,7 @@ public class MenuControls : MonoBehaviour
     /// </summary>
     public void CloseCredits()
     {
-        _creditsPanel.SetActive(false);
+        //_creditsPanel.SetActive(false);
         //_closeCreditsButton.SetActive(false);
         _startButton.SetActive(true);
         _controlsButton.SetActive(true);

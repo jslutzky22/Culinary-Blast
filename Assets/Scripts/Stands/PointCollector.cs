@@ -17,6 +17,9 @@ public class PointCollector : MonoBehaviour
     /// <summary>
     /// The Variables
     /// </summary>
+    [SerializeField] private AudioClip squelch;
+    [SerializeField] private AudioClip trashBlend;
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private TMP_Text _pointsText;
     [SerializeField] private int pointsTotal = 0;
     [SerializeField] private int smoothieProgress = 0;
@@ -70,6 +73,7 @@ public class PointCollector : MonoBehaviour
             smoothieBar.fillAmount = smoothieProgress / 5.0f;
             stylePoints += 10;
             Destroy(collision.gameObject);
+            audioSource.PlayOneShot(squelch);
         }
         if (collision.gameObject.CompareTag("Trash"))
         {
@@ -79,6 +83,7 @@ public class PointCollector : MonoBehaviour
             smoothieBar.fillAmount = smoothieProgress / 5.0f;
             stylePoints -= 50;
             Destroy(collision.gameObject);
+            audioSource.PlayOneShot(trashBlend);
         }
 
     }
