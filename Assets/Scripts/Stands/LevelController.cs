@@ -16,6 +16,8 @@ public class LevelController : MonoBehaviour
     /// The variables
     /// </summary>
     [SerializeField] private GameObject stand1;
+    [SerializeField] private GameObject styleRanks;
+    //[SerializeField] private GameObject styleMultipliers;
     [SerializeField] private GameObject winHud;
     [SerializeField] private float remainingTime;
     [SerializeField] private GameObject originalPointsText;
@@ -37,6 +39,8 @@ public class LevelController : MonoBehaviour
     //[SerializeField] private bool level3;
     //[SerializeField] private bool level4;
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject _timerText;
+    [SerializeField] private GameObject smoothieMeter;
     private bool levelCompleted = false;
     private bool starsCouroutineShot;
 
@@ -75,7 +79,10 @@ public class LevelController : MonoBehaviour
             originalPointsText.SetActive(false);
             stand1.SetActive(false);
             winHud.SetActive(true);
-
+            _timerText.SetActive(false);
+            styleRanks.SetActive(false);
+            smoothieMeter.SetActive(false);
+            //styleMultipliers.SetActive(false);
             
             _finalPointsText.text = "Paycheck: $" + pointCollector.PointsTotal.ToString();
             if (starsCouroutineShot == false)
@@ -126,16 +133,20 @@ public class LevelController : MonoBehaviour
       emptyStar1.SetActive(true);
       emptyStar2.SetActive(true);
       emptyStar3.SetActive(true);
-      if (pointCollector.PointsTotal >= star1Points)
-      {
+        yield return new WaitForSeconds(1f);
+        if (pointCollector.PointsTotal >= star1Points)
+        {
         fullStar1.SetActive(true);
-      }
-      if (pointCollector.PointsTotal >= star2Points)
-      {
+        }
+        yield return new WaitForSeconds(1f);
+        if (pointCollector.PointsTotal >= star2Points)
+        {
          fullStar2.SetActive(true);
-      }
+        }
         yield return new WaitForSeconds(1f);
-        
-        yield return new WaitForSeconds(1f);
+        if (pointCollector.PointsTotal >= star3Points)
+        {
+            fullStar3.SetActive(true);
+        }
     }
 }

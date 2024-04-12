@@ -47,7 +47,7 @@ public class PointCollector : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        _pointsText.text = "Money: $" + pointsTotal.ToString();
+        _pointsText.text = "$" + pointsTotal.ToString();
         smoothieBar.fillAmount = smoothieProgress / 5.0f;
         StartCoroutine(DecrementStylePoints());
     }
@@ -65,7 +65,7 @@ public class PointCollector : MonoBehaviour
         if (collision.gameObject.CompareTag("Fruit"))
         {
             pointsTotal += 100 * styleMod;
-            _pointsText.text = "Money: $" + pointsTotal.ToString();
+            _pointsText.text = "$" + pointsTotal.ToString();
             smoothieProgress += 1;
             smoothieBar.fillAmount = smoothieProgress / 5.0f;
             stylePoints += 10;
@@ -74,7 +74,7 @@ public class PointCollector : MonoBehaviour
         if (collision.gameObject.CompareTag("Trash"))
         {
             pointsTotal -= 100;
-            _pointsText.text = "Money: $" + pointsTotal.ToString();
+            _pointsText.text = "$" + pointsTotal.ToString();
             smoothieProgress = 0;
             smoothieBar.fillAmount = smoothieProgress / 5.0f;
             stylePoints -= 50;
@@ -88,11 +88,11 @@ public class PointCollector : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        _pointsText.text = "Money: $" + pointsTotal.ToString();
+        _pointsText.text = "$" + pointsTotal.ToString();
         if (smoothieProgress >= 5) 
         {
             pointsTotal += 300 * styleMod;
-            _pointsText.text = "Money: $" + pointsTotal.ToString();
+            _pointsText.text = "$" + pointsTotal.ToString();
             //Debug.Log("smoothie made!");
             StartCoroutine(smoothieLaunch());
             smoothieProgress = 0;

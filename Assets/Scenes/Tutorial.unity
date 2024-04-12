@@ -160,8 +160,8 @@ MonoBehaviour:
       m_Calls: []
   NodeID: 3
   TMPFont: {fileID: 0}
-  Icon: {fileID: 0}
-  Audio: {fileID: 0}
+  Icon: {fileID: 21300000, guid: baca62533ee5d2141a28a001c31f05e1, type: 3}
+  Audio: {fileID: 8300000, guid: 2d072eaa3ee9c8b439c3b8ba1f2fe43a, type: 3}
 --- !u!4 &11723162
 Transform:
   m_ObjectHideFlags: 0
@@ -194,8 +194,8 @@ MonoBehaviour:
       m_Calls: []
   NodeID: 1
   TMPFont: {fileID: 0}
-  Icon: {fileID: 0}
-  Audio: {fileID: 0}
+  Icon: {fileID: 21300000, guid: baca62533ee5d2141a28a001c31f05e1, type: 3}
+  Audio: {fileID: 8300000, guid: 3f2c15eef23c357428e0d07e492c79e1, type: 3}
 --- !u!114 &11723164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,8 +213,8 @@ MonoBehaviour:
       m_Calls: []
   NodeID: 0
   TMPFont: {fileID: 0}
-  Icon: {fileID: 0}
-  Audio: {fileID: 0}
+  Icon: {fileID: 21300000, guid: baca62533ee5d2141a28a001c31f05e1, type: 3}
+  Audio: {fileID: 8300000, guid: 7f3d7b0092c0ded438b70f40ebc8d481, type: 3}
 --- !u!114 &11723165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,8 +244,8 @@ MonoBehaviour:
         m_CallState: 2
   NodeID: 4
   TMPFont: {fileID: 0}
-  Icon: {fileID: 0}
-  Audio: {fileID: 0}
+  Icon: {fileID: 21300000, guid: baca62533ee5d2141a28a001c31f05e1, type: 3}
+  Audio: {fileID: 8300000, guid: 0f82d199638fdb849bb806b9ebcac668, type: 3}
 --- !u!1 &68737645
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,8 +575,8 @@ MonoBehaviour:
         m_CallState: 2
   NodeID: 3
   TMPFont: {fileID: 0}
-  Icon: {fileID: 0}
-  Audio: {fileID: 0}
+  Icon: {fileID: 21300000, guid: baca62533ee5d2141a28a001c31f05e1, type: 3}
+  Audio: {fileID: 8300000, guid: 314d7f0f23df13f4bb578fd048abb66c, type: 3}
 --- !u!114 &171193974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,8 +594,8 @@ MonoBehaviour:
       m_Calls: []
   NodeID: 1
   TMPFont: {fileID: 0}
-  Icon: {fileID: 0}
-  Audio: {fileID: 0}
+  Icon: {fileID: 21300000, guid: baca62533ee5d2141a28a001c31f05e1, type: 3}
+  Audio: {fileID: 8300000, guid: cc4f8d8064e93094581e392184bb4dcd, type: 3}
 --- !u!114 &171193975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -613,8 +613,8 @@ MonoBehaviour:
       m_Calls: []
   NodeID: 0
   TMPFont: {fileID: 0}
-  Icon: {fileID: 0}
-  Audio: {fileID: 0}
+  Icon: {fileID: 21300000, guid: baca62533ee5d2141a28a001c31f05e1, type: 3}
+  Audio: {fileID: 8300000, guid: 3a4628aebc68dbf459f4973ae029be8a, type: 3}
 --- !u!1 &268866116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,7 +1275,7 @@ Rigidbody:
   m_GameObject: {fileID: 489916794}
   serializedVersion: 4
   m_Mass: 20000
-  m_Drag: 0
+  m_Drag: 3
   m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -1430,7 +1430,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 505485823}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.92, z: 0}
+  m_LocalPosition: {x: 0, y: 3.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2313,15 +2313,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 5
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":218.333313,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Incredible
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":219.333374,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Incredible
     blast!!!","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":true,"IconGUID":null,"Name":"Captain
-    Brew","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":2,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":false,"xPos":218,"yPos":154.666672},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Be
+    Brew","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":2,"Volume":1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":false,"xPos":219.000061,"yPos":154.666672},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Be
     sure to only be blasting trash! If trash gets in your smoothie, it will be ruined!","parentUIDs":[0],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":true,"IconGUID":null,"Name":"Captain
-    Brew","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":2,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":4}],"EditorInfo":{"isRoot":false,"xPos":222,"yPos":299.666656},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"Now
+    Brew","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":2,"Volume":1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":4}],"EditorInfo":{"isRoot":false,"xPos":223.000061,"yPos":299.666656},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"Now
     let''s discuss which is not to be blasted! FRUITS! NEVER BLAST A FRUIT!","parentUIDs":[1],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":true,"IconGUID":null,"Name":"Captain
-    Brew","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":2,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":224,"yPos":416.666656},"ID":4,"ParamActions":[],"TMPFontGUID":null,"Text":"Let
+    Brew","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":2,"Volume":1},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":225.000061,"yPos":416.666656},"ID":4,"ParamActions":[],"TMPFontGUID":null,"Text":"Let
     this fruit fall into your blender!","parentUIDs":[3],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Captain
-    Brew","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
+    Brew","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1}]}'
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -2627,6 +2627,7 @@ GameObject:
   - component: {fileID: 1143400950}
   - component: {fileID: 1143400949}
   - component: {fileID: 1143400948}
+  - component: {fileID: 1143400951}
   m_Layer: 0
   m_Name: Cursor
   m_TagString: Untagged
@@ -2679,6 +2680,10 @@ MonoBehaviour:
   cursor: {fileID: 2800000, guid: a5b2ce5820097b744b994d6559f8f7e0, type: 3}
   cursorClicked: {fileID: 2800000, guid: c9fdcb3e3088d6e41b6af54250486e36, type: 3}
   _playerInput: {fileID: 1143400948}
+  xTurnOff: 1
+  incorrectSound: {fileID: 8300000, guid: df099aa1a3f77234abe83a81d6b9b168, type: 3}
+  MyAudioSource: {fileID: 1143400951}
+  bigX: {fileID: 1825521472}
 --- !u!4 &1143400950
 Transform:
   m_ObjectHideFlags: 0
@@ -2694,6 +2699,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1143400951
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143400947}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1182906085
 GameObject:
   m_ObjectHideFlags: 0
@@ -2958,14 +3059,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 4
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":218.333313,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Attention!!!","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":true,"IconGUID":null,"Name":"Captain
-    Brew","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":2,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":false,"xPos":219,"yPos":148.666672},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"My
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":344.333374,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Attention!!!","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":true,"IconGUID":null,"Name":"Captain
+    Brew","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":2,"Volume":1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":false,"xPos":345.000061,"yPos":148.666672},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"My
     name is Captain Brew, and today I''ll be teaching you how to brew smoothies like
     a master!","parentUIDs":[0],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":true,"IconGUID":null,"Name":"Captain
-    Brew","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":2,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":218,"yPos":288.666656},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"Proper
-    smoothie brewing requires a laser blast, and thus you have been granted one!
+    Brew","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":2,"Volume":1},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":344.000061,"yPos":288.666656},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"Proper
+    smoothie brewing requires a laser blaster, and thus you have been granted one!
     Use it to blast that trash!","parentUIDs":[1],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Captain
-    Brew","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
+    Brew","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1}]}'
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -2978,19 +3079,7 @@ MonoBehaviour:
   EndConversationFont: {fileID: 0}
   Event:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1819767000}
-        m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
-        m_MethodName: tutorialTrashSpawner
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!4 &1396452239
 Transform:
   m_ObjectHideFlags: 0
@@ -3172,13 +3261,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 5
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":218.333313,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Incredible
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":219.333374,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Incredible
     restraint!!!","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":true,"IconGUID":null,"Name":"Captain
-    Brew","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":2,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":false,"xPos":217,"yPos":144.666672},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"You''ve
+    Brew","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":2,"Volume":1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":false,"xPos":219.000061,"yPos":139.666672},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"You''ve
     proven yourself a noble warrior in the way of the barista!","parentUIDs":[0],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":true,"IconGUID":null,"Name":"Captain
-    Brew","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":2,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":211,"yPos":301.666656},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"Your
-    training is complete, blast this fruit to move on to your first shift!","parentUIDs":[1],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":true,"IconGUID":null,"Name":"Captain
-    Brew","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":4,"Volume":0}]}'
+    Brew","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":2,"Volume":1},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":213.000061,"yPos":297.666656},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"Your
+    training is complete, blast this TRASH to move on to your first shift!","parentUIDs":[1],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":true,"IconGUID":null,"Name":"Captain
+    Brew","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":4,"Volume":1}]}'
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -3560,8 +3649,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465ab2015bde67747bfb96fe7db270ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  incorrectSound: {fileID: 0}
-  MyAudioSource: {fileID: 0}
   convo1: {fileID: 1396452238}
   convo2: {fileID: 955185156}
   convo3: {fileID: 1666536762}
@@ -3707,8 +3794,8 @@ MonoBehaviour:
         m_CallState: 2
   NodeID: 3
   TMPFont: {fileID: 0}
-  Icon: {fileID: 0}
-  Audio: {fileID: 0}
+  Icon: {fileID: 21300000, guid: baca62533ee5d2141a28a001c31f05e1, type: 3}
+  Audio: {fileID: 8300000, guid: d419fb999adaade45abf81c51bcbb854, type: 3}
 --- !u!4 &2017271192
 Transform:
   m_ObjectHideFlags: 0
@@ -3741,8 +3828,8 @@ MonoBehaviour:
       m_Calls: []
   NodeID: 1
   TMPFont: {fileID: 0}
-  Icon: {fileID: 0}
-  Audio: {fileID: 0}
+  Icon: {fileID: 21300000, guid: baca62533ee5d2141a28a001c31f05e1, type: 3}
+  Audio: {fileID: 8300000, guid: ad74017b24ef3434e8246938db52f45a, type: 3}
 --- !u!114 &2017271194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3760,8 +3847,8 @@ MonoBehaviour:
       m_Calls: []
   NodeID: 0
   TMPFont: {fileID: 0}
-  Icon: {fileID: 0}
-  Audio: {fileID: 0}
+  Icon: {fileID: 21300000, guid: baca62533ee5d2141a28a001c31f05e1, type: 3}
+  Audio: {fileID: 8300000, guid: e93fb34f38544914587aaf9ebb4c03db, type: 3}
 --- !u!1001 &2145587107
 PrefabInstance:
   m_ObjectHideFlags: 0
