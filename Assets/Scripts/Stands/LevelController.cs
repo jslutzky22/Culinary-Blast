@@ -15,9 +15,11 @@ public class LevelController : MonoBehaviour
     /// <summary>
     /// The variables
     /// </summary>
+    [SerializeField] private AudioClip bloop;
+    [SerializeField] private AudioClip megaBloop;
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private GameObject stand1;
     [SerializeField] private GameObject styleRanks;
-    //[SerializeField] private GameObject styleMultipliers;
     [SerializeField] private GameObject winHud;
     [SerializeField] private float remainingTime;
     [SerializeField] private GameObject originalPointsText;
@@ -82,16 +84,14 @@ public class LevelController : MonoBehaviour
             _timerText.SetActive(false);
             styleRanks.SetActive(false);
             smoothieMeter.SetActive(false);
-            //styleMultipliers.SetActive(false);
             
             _finalPointsText.text = "Paycheck: $" + pointCollector.PointsTotal.ToString();
             if (starsCouroutineShot == false)
             {
-                StartCoroutine(starCourotine());
+                StartCoroutine(starCouroutine());
                 starsCouroutineShot = true;
             }
 
-            
             levelCompleted = true;
         }
     }
@@ -128,7 +128,13 @@ public class LevelController : MonoBehaviour
     {
         pauseMenu.SetActive(false);
     }
-    private IEnumerator starCourotine()
+
+    /// <summary>
+    /// On the IEnumerator being triggered. Spawn empty stars, wait a second, and then depending on your final
+    /// points, fill in stars to showcase how well the player did
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator starCouroutine()
     {
       emptyStar1.SetActive(true);
       emptyStar2.SetActive(true);
@@ -136,16 +142,19 @@ public class LevelController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         if (pointCollector.PointsTotal >= star1Points)
         {
-        fullStar1.SetActive(true);
+            audioSource.PlayOneShot(bloop, 0.5f);
+            fullStar1.SetActive(true);
         }
         yield return new WaitForSeconds(1f);
         if (pointCollector.PointsTotal >= star2Points)
         {
-         fullStar2.SetActive(true);
+            audioSource.PlayOneShot(bloop, 0.5f);
+            fullStar2.SetActive(true);
         }
         yield return new WaitForSeconds(1f);
         if (pointCollector.PointsTotal >= star3Points)
         {
+            audioSource.PlayOneShot(megaBloop, 0.5f);
             fullStar3.SetActive(true);
         }
     }

@@ -94,7 +94,7 @@ public class CursorController : MonoBehaviour
     private void StartedClick()
     {
         ChangeCursor(cursorClicked);
-        audioSource.PlayOneShot(laser);
+        audioSource.PlayOneShot(laser, 0.5f);
     }
 
     /// <summary>
@@ -111,6 +111,7 @@ public class CursorController : MonoBehaviour
     /// Can also make it go a certain distance and shoot through things as well
     /// Also ensures an object is being clicked prior to doing the onClickAction
     /// Also makes it so that if the object clicked was trash, add 100 points
+    /// If the object was a fruit, star the "misfire" coroutine.
     /// </summary>
     private void DetectObject()
     {
@@ -164,6 +165,11 @@ public class CursorController : MonoBehaviour
         Vector2 hotspot = new Vector2(cursorType.width / 2, cursorType.height / 2);
         Cursor.SetCursor(cursorType, hotspot, CursorMode.ForceSoftware);
     }
+
+    /// <summary>
+    /// This coroutine causes a big X to flash on screen alongside a sound to encourage players to not shoot fruits.
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator misfire()
     {
         bigX.SetActive(true);

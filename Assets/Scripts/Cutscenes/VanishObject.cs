@@ -9,6 +9,9 @@ using UnityEngine;
 
 public class VanishObject : MonoBehaviour
 {
+    /// <summary>
+    /// The Variables
+    /// </summary>
     [SerializeField] float duration;
     private float timer = 0.0f;
     private bool isVanishing = false;

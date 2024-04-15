@@ -11,8 +11,6 @@ using UnityEngine.SceneManagement;
 
 public class MenuControls : MonoBehaviour
 {
-    //[SerializeField] GameObject _controlsPanel;
-    //[SerializeField] GameObject _creditsPanel;
     [SerializeField] GameObject _startButton;
     [SerializeField] GameObject _controlsButton;
     [SerializeField] GameObject _creditsButton;
@@ -48,8 +46,6 @@ public class MenuControls : MonoBehaviour
     /// </summary>
     public void OpenControls()
     {
-        //_controlsPanel.SetActive(true);
-        //_closeControlsButton.SetActive(true);
         _startButton.SetActive(false);
         _controlsButton.SetActive(false);
         _creditsButton.SetActive(false);
@@ -61,8 +57,6 @@ public class MenuControls : MonoBehaviour
     /// </summary>
     public void CloseControls()
     {
-        //_controlsPanel.SetActive(false);
-        //_closeControlsButton.SetActive(false);
         _startButton.SetActive(true);
         _controlsButton.SetActive(true);
         _creditsButton.SetActive(true);
@@ -74,8 +68,6 @@ public class MenuControls : MonoBehaviour
     /// </summary>
     public void OpenCredits()
     {
-        //_creditsPanel.SetActive(true);
-        //_closeCreditsButton.SetActive(true);
         _startButton.SetActive(false);
         _controlsButton.SetActive(false);
         _creditsButton.SetActive(false);
@@ -83,18 +75,19 @@ public class MenuControls : MonoBehaviour
     }
 
     /// <summary>
-    /// When this void is trigged, it will Close the credit panel
+    /// When this void is trigged, it will Close the credit panel and enable various objects
     /// </summary>
     public void CloseCredits()
     {
-        //_creditsPanel.SetActive(false);
-        //_closeCreditsButton.SetActive(false);
         _startButton.SetActive(true);
         _controlsButton.SetActive(true);
         _creditsButton.SetActive(true);
         _quitButton.SetActive(true);
     }
-
+    
+    /// <summary>
+    /// When triggered, send the player to the associated levels.
+    /// </summary>
     public void levelOne()
     {
         SceneManager.LoadScene("Level01");

@@ -55,12 +55,9 @@ public class PointCollector : MonoBehaviour
         StartCoroutine(DecrementStylePoints());
     }
 
-
-
-
     /// <summary>
-    /// On collision, depending on the tag, either add 100 points and 1 smoothie progress or take away 100 points and
-    /// minus 1 smoothie progress.
+    /// On collision, depending on the tag, either add points and 1 smoothie progress or take away points and
+    /// minus 1 smoothie progress. Also add to or take away from the amount of style points the player has.
     /// </summary>
     /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
@@ -81,7 +78,7 @@ public class PointCollector : MonoBehaviour
             _pointsText.text = "$" + pointsTotal.ToString();
             smoothieProgress = 0;
             smoothieBar.fillAmount = smoothieProgress / 5.0f;
-            stylePoints -= 50;
+            stylePoints -= 150;
             Destroy(collision.gameObject);
             audioSource.PlayOneShot(trashBlend);
         }
@@ -89,7 +86,9 @@ public class PointCollector : MonoBehaviour
     }
 
     /// <summary>
-    /// If smoothie progress is equal to or greater then 5. Add 300 points and set smoothie progress to 0
+    /// If smoothie progress is equal to or greater then 5. Add 300 points and set smoothie progress to 0.
+    /// If the player has certain amounts of style points, enable certain gameObjects and multiply the amount of points
+    /// obtained.
     /// </summary>
     private void Update()
     {
@@ -98,7 +97,6 @@ public class PointCollector : MonoBehaviour
         {
             pointsTotal += 300 * styleMod;
             _pointsText.text = "$" + pointsTotal.ToString();
-            //Debug.Log("smoothie made!");
             StartCoroutine(smoothieLaunch());
             smoothieProgress = 0;
             smoothieBar.fillAmount = smoothieProgress / 5.0f;
@@ -120,7 +118,7 @@ public class PointCollector : MonoBehaviour
             x3Display.SetActive(false);
             styleMod = 1;
         }
-        if (stylePoints >= 30 && stylePoints < 60)
+        if (stylePoints >= 30 && stylePoints < 70)
         {
             delectable.SetActive(true);
             culinary.SetActive(false);
@@ -132,7 +130,7 @@ public class PointCollector : MonoBehaviour
             x3Display.SetActive(false);
             styleMod = 1;
         }
-        if (stylePoints >= 61 && stylePoints < 90)
+        if (stylePoints >= 71 && stylePoints < 130)
         {
             delectable.SetActive(false);
             culinary.SetActive(true);
@@ -144,7 +142,7 @@ public class PointCollector : MonoBehaviour
             x3Display.SetActive(false);
             styleMod = 1;
         }
-        if (stylePoints >= 91 && stylePoints < 120)
+        if (stylePoints >= 131 && stylePoints < 170)
         {
             delectable.SetActive(false);
             culinary.SetActive(false);
@@ -156,7 +154,7 @@ public class PointCollector : MonoBehaviour
             x3Display.SetActive(false);
             styleMod = 2;
         }
-        if (stylePoints >= 121 && stylePoints < 150)
+        if (stylePoints >= 171 && stylePoints < 230)
         {
             delectable.SetActive(false);
             culinary.SetActive(false);
@@ -168,7 +166,7 @@ public class PointCollector : MonoBehaviour
             x3Display.SetActive(false);
             styleMod = 2;
         }
-        if (stylePoints >= 151)
+        if (stylePoints >= 231)
         {
             delectable.SetActive(false);
             culinary.SetActive(false);
@@ -180,37 +178,41 @@ public class PointCollector : MonoBehaviour
             x3Display.SetActive(true);
             styleMod = 3;
         }
-
-
-        /*if (smoothieProgress < 0)
+        if (stylePoints > 260)
         {
-            smoothieProgress = 0;
-            smoothieBar.fillAmount = smoothieProgress / 5.0f;
-
-        }*/
+            stylePoints = 260;
+        }
     }
+
+    /// <summary>
+    /// When smoothieLaunch is triggered, launch a smoothie on a path towards the smoothieSendLocation. Then hide it
+    /// once the smoothie is close enough
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator smoothieLaunch()
     {
         smoothie.transform.position = smoothieSpawnLocation.transform.position;
         smoothie.SetActive(true);
-        // Move smoothie towards send location
         isSmoothieMoving = true;
         while (isSmoothieMoving)
         {
             Vector3 direction = (smoothieSendLocation.transform.position - smoothie.transform.position).normalized;
             smoothie.transform.Translate(direction * smoothieSpeed * Time.deltaTime);
 
-            // Check if smoothie reaches send location
             if (Vector3.Distance(smoothie.transform.position, smoothieSendLocation.transform.position) < 0.1f)
             {
                 isSmoothieMoving = false;
-                smoothie.SetActive(false); // Hide smoothie
+                smoothie.SetActive(false);
                 yield break;
             }
-
             yield return null;
         }
     }
+
+    /// <summary>
+    /// Every second, remove 2 from stylePoints.
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator DecrementStylePoints()
     {
         while (true)
