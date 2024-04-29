@@ -114,8 +114,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7684780145535483107}
   serializedVersion: 4
-  m_Mass: 0.2
-  m_Drag: 0.2
+  m_Mass: 0.1
+  m_Drag: 0.4
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -166,8 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a7c9b98765aa1408bda2eb79331442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  incorrectSound: {fileID: 8300000, guid: df099aa1a3f77234abe83a81d6b9b168, type: 3}
-  MyAudioSource: {fileID: 7549601119235966089}
   xTurnOff: 0.5
 --- !u!82 &7549601119235966089
 AudioSource:

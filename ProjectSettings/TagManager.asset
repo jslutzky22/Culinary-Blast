@@ -11,6 +11,7 @@ TagManager:
   - Blender
   - Smoothie
   - Deleter
+  - Effects
   layers:
   - Default
   - TransparentFX

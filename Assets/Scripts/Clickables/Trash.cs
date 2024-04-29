@@ -13,7 +13,7 @@ public class Trash : MonoBehaviour, IClick
     /// Call the pointCollector Script
     /// </summary>
     private PointCollector pointCollector;
-
+    [SerializeField] private GameObject explosionPrefab;
     /// <summary>
     /// Find the pointCollector script in the scene
     /// </summary>
@@ -28,6 +28,7 @@ public class Trash : MonoBehaviour, IClick
     public void onClickAction()
     {
         pointCollector.PointsTotal += 100;
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

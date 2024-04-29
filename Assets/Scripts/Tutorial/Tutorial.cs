@@ -7,6 +7,7 @@
 *****************************************************************************/
 using DialogueEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Tutorial : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class Tutorial : MonoBehaviour
     [SerializeField] GameObject tutorialTrash;
     [SerializeField] GameObject tutorialFruit;
     [SerializeField] GameObject leaveButton;
+    [SerializeField] GameObject howToTrash;
+    [SerializeField] GameObject howToFruit;
 
     /// <summary>
     /// On start, start up the first dialogue
@@ -34,10 +37,12 @@ public class Tutorial : MonoBehaviour
     public void tutorialTrashSpawner()
     {
         tutorialTrash.SetActive(true);
+        howToTrash.SetActive(true);
     }
     public void tutorialFruitSpawner()
     {
         tutorialFruit.SetActive(true);
+        howToFruit.SetActive(true);
     }
     public void leaveButtonSpawner()
     {
@@ -46,9 +51,15 @@ public class Tutorial : MonoBehaviour
     public void secondConversation()
     {
         ConversationManager.Instance.StartConversation(convo2);
+        howToTrash.SetActive(false);
     }
     public void thirdConversation()
     {
         ConversationManager.Instance.StartConversation(convo3);
+        howToFruit.SetActive(false);
+    }
+    public void loadNextSceneNow()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

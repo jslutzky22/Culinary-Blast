@@ -168,9 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a7c9b98765aa1408bda2eb79331442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  incorrectSound: {fileID: 8300000, guid: df099aa1a3f77234abe83a81d6b9b168, type: 3}
-  MyAudioSource: {fileID: 97460259976027054}
-  bigX: {fileID: 4714920738561777834, guid: 9e1524cb52deeb24e88bc19f22663105, type: 3}
   xTurnOff: 0.5
 --- !u!54 &7620048371554895373
 Rigidbody:
@@ -180,8 +177,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8809003042618425886}
   serializedVersion: 4
-  m_Mass: 0.2
-  m_Drag: 0.2
+  m_Mass: 0.1
+  m_Drag: 0.4
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}

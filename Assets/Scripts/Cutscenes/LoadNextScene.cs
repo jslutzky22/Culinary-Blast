@@ -66,5 +66,12 @@ public class LoadNextScene : MonoBehaviour
         imageToAppear.SetActive(true);
     }
 
+    /// <summary>
+    /// This void will load the next scene on being called
+    /// </summary>
+    public void loadSceneNow()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 
 }

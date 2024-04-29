@@ -36,9 +36,11 @@ public class PointCollector : MonoBehaviour
     [SerializeField] private GameObject smoothie;
     [SerializeField] private GameObject smoothieSpawnLocation;
     [SerializeField] private GameObject smoothieSendLocation;
+    [SerializeField] private GameObject trashTouched;
     [SerializeField] private float smoothieSpeed;
     [SerializeField] private bool isSmoothieMoving;
-
+    [SerializeField] private GameObject normalStyleBar;
+    [SerializeField] private GameObject specialStyleBar;
 
     /// <summary>
     /// The Getter Setters
@@ -81,6 +83,7 @@ public class PointCollector : MonoBehaviour
             stylePoints -= 150;
             Destroy(collision.gameObject);
             audioSource.PlayOneShot(trashBlend);
+            StartCoroutine(trashCaught());
         }
 
     }
@@ -100,7 +103,7 @@ public class PointCollector : MonoBehaviour
             StartCoroutine(smoothieLaunch());
             smoothieProgress = 0;
             smoothieBar.fillAmount = smoothieProgress / 5.0f;
-            stylePoints += 50;
+            stylePoints += 25;
         }
         if (stylePoints < 0)
         {
@@ -117,6 +120,8 @@ public class PointCollector : MonoBehaviour
             x2Display.SetActive(false);
             x3Display.SetActive(false);
             styleMod = 1;
+            normalStyleBar.SetActive(false);
+            specialStyleBar.SetActive(false);
         }
         if (stylePoints >= 30 && stylePoints < 70)
         {
@@ -129,6 +134,8 @@ public class PointCollector : MonoBehaviour
             x2Display.SetActive(false);
             x3Display.SetActive(false);
             styleMod = 1;
+            normalStyleBar.SetActive(true);
+            specialStyleBar.SetActive(false);
         }
         if (stylePoints >= 71 && stylePoints < 130)
         {
@@ -141,6 +148,8 @@ public class PointCollector : MonoBehaviour
             x2Display.SetActive(false);
             x3Display.SetActive(false);
             styleMod = 1;
+            normalStyleBar.SetActive(true);
+            specialStyleBar.SetActive(false);
         }
         if (stylePoints >= 131 && stylePoints < 170)
         {
@@ -153,6 +162,8 @@ public class PointCollector : MonoBehaviour
             x2Display.SetActive(true);
             x3Display.SetActive(false);
             styleMod = 2;
+            normalStyleBar.SetActive(false);
+            specialStyleBar.SetActive(true);
         }
         if (stylePoints >= 171 && stylePoints < 230)
         {
@@ -165,6 +176,8 @@ public class PointCollector : MonoBehaviour
             x2Display.SetActive(true);
             x3Display.SetActive(false);
             styleMod = 2;
+            normalStyleBar.SetActive(false);
+            specialStyleBar.SetActive(true);
         }
         if (stylePoints >= 231)
         {
@@ -177,6 +190,8 @@ public class PointCollector : MonoBehaviour
             x2Display.SetActive(false);
             x3Display.SetActive(true);
             styleMod = 3;
+            normalStyleBar.SetActive(false);
+            specialStyleBar.SetActive(true);
         }
         if (stylePoints > 260)
         {
@@ -220,5 +235,11 @@ public class PointCollector : MonoBehaviour
             yield return new WaitForSeconds(1f);
             stylePoints -= 2;
         }
+    }
+    private IEnumerator trashCaught() 
+    {
+        trashTouched.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        trashTouched.SetActive(false);
     }
 }
