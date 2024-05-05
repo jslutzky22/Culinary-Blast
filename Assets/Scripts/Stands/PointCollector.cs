@@ -95,6 +95,11 @@ public class PointCollector : MonoBehaviour
     /// </summary>
     private void Update()
     {
+        if (smoothieProgress < 0)
+        {
+            smoothieProgress = 0;
+        }
+
         _pointsText.text = "$" + pointsTotal.ToString();
         if (smoothieProgress >= 5) 
         {
