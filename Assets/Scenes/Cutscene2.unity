@@ -135,6 +135,8 @@ GameObject:
   - component: {fileID: 84615294}
   - component: {fileID: 84615293}
   - component: {fileID: 84615292}
+  - component: {fileID: 84615296}
+  - component: {fileID: 84615295}
   m_Layer: 5
   m_Name: Cutscene
   m_TagString: Untagged
@@ -221,6 +223,127 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 84615290}
   m_CullTransparentMesh: 1
+--- !u!82 &84615295
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84615290}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &84615296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84615290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcac1897c6fbc5149b246cf84dc09c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadSceneAfter: 6.4
+  loadMenu: 1
+  imageToAppear: {fileID: 0}
+  audioSource: {fileID: 84615295}
+  blast: {fileID: 8300000, guid: 07db1f128ed2e7a44a44e31ddb8555a8, type: 3}
+  birdFlap: {fileID: 0}
+  airLockDoor: {fileID: 0}
+  landing: {fileID: 0}
+  jump: {fileID: 0}
+  sell: {fileID: 8300000, guid: d60f9a57b4e71ce4ca603830fa97995f, type: 3}
+  beam: {fileID: 8300000, guid: 3bdfc4fc3063ab0499e0466efe765f14, type: 3}
+  squelch: {fileID: 8300000, guid: 7c80b486a9af9c246b12a78d88c862fa, type: 3}
+  shine: {fileID: 8300000, guid: d40c3798bc63f814899dcea796d95c21, type: 3}
 --- !u!1 &247481247
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,7 +368,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247481247}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bcac1897c6fbc5149b246cf84dc09c05, type: 3}
   m_Name: 
@@ -253,6 +376,16 @@ MonoBehaviour:
   loadSceneAfter: 6.4
   loadMenu: 1
   imageToAppear: {fileID: 0}
+  audioSource: {fileID: 0}
+  blast: {fileID: 0}
+  birdFlap: {fileID: 0}
+  airLockDoor: {fileID: 0}
+  landing: {fileID: 0}
+  jump: {fileID: 0}
+  sell: {fileID: 0}
+  beam: {fileID: 0}
+  squelch: {fileID: 0}
+  shine: {fileID: 0}
 --- !u!4 &247481249
 Transform:
   m_ObjectHideFlags: 0

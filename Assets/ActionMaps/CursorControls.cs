@@ -90,7 +90,7 @@ public partial class @CursorControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""1c768e6e-45ef-4f55-b270-86f340b52a80"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

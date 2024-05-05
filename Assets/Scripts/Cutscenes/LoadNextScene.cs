@@ -19,11 +19,21 @@ public class LoadNextScene : MonoBehaviour
     private bool sceneLoadStarted = false;
     [SerializeField] private bool loadMenu;
     [SerializeField] GameObject imageToAppear;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip blast;
+    [SerializeField] private AudioClip birdFlap;
+    [SerializeField] private AudioClip airLockDoor;
+    [SerializeField] private AudioClip landing;
+    [SerializeField] private AudioClip jump;
+    [SerializeField] private AudioClip sell;
+    [SerializeField] private AudioClip beam;
+    [SerializeField] private AudioClip squelch;
+    [SerializeField] private AudioClip shine;
 
-   /// <summary>
-   /// Every frame check if the scene load has been started, then depending on if loadMenu is true or not.
-   /// Activate the associated following Coroutine after this.
-   /// </summary>
+    /// <summary>
+    /// Every frame check if the scene load has been started, then depending on if loadMenu is true or not.
+    /// Activate the associated following Coroutine after this.
+    /// </summary>
     void Update()
     {
         if (!sceneLoadStarted && loadMenu == false)
@@ -74,4 +84,43 @@ public class LoadNextScene : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    /// <summary>
+    /// These voids provide the cutscene audio
+    /// </summary>
+    public void blastSound()
+    {
+        audioSource.PlayOneShot(blast);
+    }
+    public void birdFlapSound()
+    {
+        audioSource.PlayOneShot(birdFlap);
+    }
+    public void airLockSound()
+    {
+        audioSource.PlayOneShot(airLockDoor);
+    }
+    public void landingSound()
+    {
+        audioSource.PlayOneShot(landing);
+    }
+    public void jumpSound()
+    {
+        audioSource.PlayOneShot(jump);
+    }
+    public void sellSound()
+    {
+        audioSource.PlayOneShot(sell);
+    }
+    public void beamSound()
+    {
+        audioSource.PlayOneShot(beam);
+    }
+    public void squelchSound()
+    {
+        audioSource.PlayOneShot(squelch);
+    }
+    public void shineSound()
+    {
+        audioSource.PlayOneShot(shine);
+    }
 }

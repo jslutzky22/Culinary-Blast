@@ -78,7 +78,7 @@ public class PointCollector : MonoBehaviour
         {
             pointsTotal -= 100;
             _pointsText.text = "$" + pointsTotal.ToString();
-            smoothieProgress = 0;
+            smoothieProgress -= 2;
             smoothieBar.fillAmount = smoothieProgress / 5.0f;
             stylePoints -= 150;
             Destroy(collision.gameObject);
